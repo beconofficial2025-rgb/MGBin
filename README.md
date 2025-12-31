@@ -148,6 +148,9 @@ Animal tries to access → Door remains locked → No leverage / no grip → Acc
 - Smart Automation without Dependence on Electricity  
 
 ---
+---
+## Monkey Detection
+For monkey detection we used this Edgeimpulse model for esp32 cam developed by our team: **[Model](https://github.com/vp007-dev/Monkey-Detection-Arduino-System-Embedded-Machine-Vision)**
 
 ## 🌍 Impact
 
