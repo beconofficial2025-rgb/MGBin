@@ -8,7 +8,7 @@ It combines **IoT-based intelligence with mechanical fail-safe automation**, mak
 ## 🎥 Prototype Video Documentary
 
 📽 Watch full working prototype demonstration here:  
-👉 **[Click to Watch Documentary](PASTE_YOUR_VIDEO_LINK_HERE)**
+👉 **![Click to Watch Documentary](VideoDoc.mp4)**
 
 This documentary demonstrates:
 - Mechanical pivot-door working
