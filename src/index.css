@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 25% 8%;
+    --foreground: 60 10% 95%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 60 10% 95%;
+
+    --popover: 220 20% 12%;
+    --popover-foreground: 60 10% 95%;
+
+    --primary: 142 70% 50%;
+    --primary-foreground: 220 25% 8%;
+
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 60 10% 95%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 180 100% 45%;
+    --accent-foreground: 220 25% 8%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 60 10% 95%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 15%;
+    --ring: 142 70% 50%;
+
+    --radius: 0.75rem;
+
+    /* Waste bin colors - vibrant neon */
+    --bin-paper: 142 70% 45%;
+    --bin-glass: 217 90% 55%;
+    --bin-plastic: 48 95% 55%;
+    --bin-metal: 220 15% 55%;
+    --bin-organic: 25 90% 50%;
+
+    /* Workflow colors */
+    --workflow-input: 280 70% 55%;
+    --workflow-detect: 180 100% 45%;
+    --workflow-separate: 142 70% 50%;
+    --workflow-process: 48 95% 55%;
+    --workflow-output: 25 90% 50%;
+
+    /* Neon glow effects */
+    --glow-primary: 0 0 30px hsl(142 70% 50% / 0.4);
+    --glow-accent: 0 0 30px hsl(180 100% 45% / 0.4);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 25% 8%;
+    --foreground: 60 10% 95%;
+    --card: 220 20% 12%;
+    --card-foreground: 60 10% 95%;
+    --popover: 220 20% 12%;
+    --popover-foreground: 60 10% 95%;
+    --primary: 142 70% 50%;
+    --primary-foreground: 220 25% 8%;
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 60 10% 95%;
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 10% 60%;
+    --accent: 180 100% 45%;
+    --accent-foreground: 220 25% 8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 60 10% 95%;
+    --border: 220 20% 20%;
+    --input: 220 20% 15%;
+    --ring: 142 70% 50%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-xl border border-border/50;
+  }
+
+  .neon-glow {
+    box-shadow: var(--glow-primary);
+  }
+
+  .neon-glow-accent {
+    box-shadow: var(--glow-accent);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.6);
+  }
+
+  .text-glow-accent {
+    text-shadow: 0 0 20px hsl(var(--accent) / 0.6);
+  }
+
+  .gradient-border {
+    position: relative;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  .retro-grid {
+    background-image: 
+      linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .scanline {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(var(--primary) / 0.03) 2px,
+      hsl(var(--primary) / 0.03) 4px
+    );
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 3px;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+@keyframes flow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+.animate-flow {
+  background-size: 200% 100%;
+  animation: flow 3s linear infinite;
+}
