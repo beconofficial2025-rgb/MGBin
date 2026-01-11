@@ -1,73 +1,180 @@
-# Welcome to your Lovable project
+![Poster](poster.png)
+# MGBin – Monkey Guard Smart Bin  
+### Round-2 Smart City IoT & Mechanical Automation System
 
-## Project info
+---
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🎥 Project Videos
 
-## How can I edit this code?
+| Purpose | Link |
+|--------|------|
+| Technical Approach Video | [Technical Explaination](https://drive.google.com/file/d/1JWRlRVdFCfKRHM0KnwjiYrIf2cFDNI4o/view?usp=sharing) |
+| Round-2 Enhancement Documentary | [Round 2 Documentary](https://drive.google.com/file/d/1dlNztSUY4iy3TiQ1BruDTWPyfx5UkcB-/view?usp=sharing) |
+| Project Overview Video | [Youtube Link](https://youtu.be/VYybgXGgpbo) |
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## 🧠 Vision
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+MGBin is a hybrid **IoT + mechanical smart waste infrastructure** designed to prevent monkey interference while enabling automated waste segregation and city-wide sanitation intelligence.
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+# 🧩 System Architecture
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+```text
+User
+   |
+   v
+ESP32-CAM Detection Unit
+   |
+   +-----------+
+   |           |
+Motorized Flap  Mechanical Gravity Door
+   |           |
+   v           v
+Sensor Array → Auto Segregation System
+   |
+   v
+Cloud IoT Dashboard → Smart City Control Room
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
 ```
 
-**Edit a file directly in GitHub**
+# ⚙ Working Flow
+```text
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Approach Detected →Human / Animal Classified →If Human → Flap Opens →Sensors Scan Waste →Auto-Segregation →Bin Status Uploaded → Dashboard Analytics      
 
-**Use GitHub Codespaces**
+```
+# 🚨 Problem Statement
+### Monkeys and stray animals frequently open dustbins in Indian cities, scattering garbage, spreading diseases and increasing municipal cleaning costs.Traditional bins offer no species-specific access control or automation.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# 💡 Proposed Solution
 
-## What technologies are used for this project?
+MGBin introduces a dual-mode intelligent bin:
 
-This project is built with:
+• IoT Mode — ESP32-CAM opens flap only for humans
+• Mechanical Fail-Safe Mode — gravity pivot door blocks animals even without power
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+This ensures 100% operational reliability.
 
-## How can I deploy this project?
+# 🚀 Round-2 Auto-Segregation Enhancements
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+- Moisture sensors for wet/dry separation
+- Metal & plastic detection sensors
+- Liquid waste channeling module
+- Organic waste compost generation
+- Ultrasonic fill-level monitoring
+- GPS tagged Smart City dashboard
+- Solar panel & battery backup
+---
 
-## Can I connect a custom domain to my Lovable project?
+# 📊 Automation Logic
 
-Yes, you can!
+| Input           | Action             | Output           |
+| --------------- | ------------------ | ---------------- |
+| Human detected  | Flap opens         | Waste accepted   |
+| Animal detected | Flap locked        | Access denied    |
+| Power failure   | Gravity door works | Manual mode      |
+| Waste scanned   | Sensors classify   | Auto segregation |
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+# 🛠 Technology Stack
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+| Layer      | Technology                  |
+| ---------- | --------------------------- |
+| Controller | ESP32-CAM                   |
+| Sensors    | Moisture, Metal, Ultrasonic |
+| Motors     | Gear Motor                  |
+| Cloud      | Firebase                    |
+| Dashboard  | Smart City Admin Panel      |
+| Power      | Solar + Battery             |
+| AI model   | Waste Recognition           |
+
+# 📈 Scalability, Growth & Failure Handling
+
+MGBin is designed as a **Smart City–scale sanitation infrastructure**, not a single smart bin.
+
+---
+## 🏙 Handling Large-Scale City Deployment
+
+| Challenge | MGBin Solution |
+|---------|----------------|
+| Thousands of bins in a city | Cloud-based bin registry |
+| High waste load | Auto-segregation prevents overload |
+| Area-wise waste analysis | GPS-tagged bin data |
+| Peak tourist seasons | Dynamic collection scheduling |
+| Multiple cities | Multi-tenant dashboard architecture |
+---
+## ⚠️ Failure Handling & Reliability
+
+| Failure Scenario | Protection Mechanism |
+|----------------|----------------------|
+| Power failure | Mechanical gravity mode |
+| Sensor failure | Manual gravity operation |
+| Network failure | Local storage + delayed sync |
+| Full bin | Ultrasonic fill-level alerts |
+| Motor failure | Manual gravity fallback |
+
+---
+
+## 📊 Growth in Waste Segregation Efficiency
+
+| Metric | Growth Strategy |
+|------|----------------|
+| Segregation accuracy | AI model upgrades |
+| Compost generation | Local compost hubs |
+| Plastic recovery | Municipal recycling pipelines |
+| Wet waste volume | Fertilizer generation |
+
+---
+
+## 🌱 Environmental Sustainability
+
+- Reduces landfill load  
+- Increases recycling recovery  
+- Supports compost-based green spaces  
+- Smart City environmental compliance  
+
+---
+
+MGBin can scale from **parks → city zones → full municipal networks** with full fault tolerance.
+
+# 📱 Smart Bin Monitoring App (Prototype)
+### [Demo](https://beacon-three-omega.vercel.app/)
+Along with the physical MGBin unit, we have developed a **mobile/web monitoring prototype** that provides real-time visibility into bin status and waste levels.
+
+### App Capabilities
+
+| Feature | Purpose |
+|-------|--------|
+| Live bin fill-level tracking | Prevents overflow |
+| Auto alerts & notifications | Notifies collection teams |
+| GPS based bin mapping | Area-wise tracking |
+| Waste category monitoring | Segregation insights |
+| Dashboard analytics | City sanitation planning |
+
+### Alert Workflow
+
+```text
+Bin Fill Level Detected →
+Threshold Crossed →
+Alert Sent to App →
+Municipal Team Notified →
+Collection Scheduled
+```
+
+# 🌍 Impact
+
+- Prevents monkey garbage scattering
+- Reduces sanitation cost
+- Enables hygienic waste management
+- Smart City and Swachh Bharat compliant
+
+## 👥 Team
+
+| Name | Role |
+|-----|-----|
+| Mayank Gangawar | Project Lead & Designer |
+| Manthan Makhija | Coder |
+| Sachin Shakya | Circuit Designer |
+| Shobit Rajpoot |  Mechanical Design Engineer |
